@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Math Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <video playsinline autoplay class="bacgroundVideo">
+                <source src="Forest_background_animation_No_copyright.mp4" type="video/mp4">
+            </video>
+
+            <nav>
+                <img src="owlLogo.png" alt="" class="logo">
+                <ul>
+                    <li id="usernamedisplay"></li>
+                    <li id="highscoredisplay"></li>
+                </ul>
+            </nav>
+
+            <div class="content">
+                
+                <form id="registrationForm">
+                    <div class="dataEntry" id="register">
+                        <table>
+    
+                            <tr><td colspan="2"><h3>Registration</h3><hr></td></tr>
+            
+                            <tr>
+                                
+                                <td><label for="firstName">First Name:</label></td>
+                                <td> <input type="text" id="firstName" required minlength="3"></td>
+                            </tr>
+            
+                            <tr>
+                                <td><label for="lastName">Last Name:</label></td>
+                                <td><input type="text" id="lastName" required minlength="3" ></td>
+                            </tr>
+            
+                            <tr>
+                                <td><label for="email">Email:</label></td>
+                                <td><input type="email" id="email" required pattern=".*@gmail\.com" placeholder="johndoe@gmail.com"></td>
+                            </tr>
+            
+                            <tr>
+                                <td><label for="dob">Date of Birth:</label></td>
+                                <td><input type="date" id="dob" required onchange="calculateAge()"></td>
+                            </tr>
+            
+                            <tr>
+                                <td><label for="age">Age:</label></td>
+                                <td><input type="text" id="age" disabled></td>
+                            </tr>
+                            <tr>
+                                <td><label for="gender">Gender:</label></td>
+                                <td><select id="gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                </select></td>
+                            </tr>
+                        </table>
+                    </div> <!--End of dataEntry div-->
+
+                    <div class="play" id="playArea">
+                        <div class="grid">
+                            <div class="equation-container">
+                                <p id="equationid"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="answerInput" placeholder="?">
+                            </div>
+                        </div>
+                    </div><!--End of playArea div-->
+
+                    <div class="buttons">
+                        <button type="button" onclick="Register()" id="registerButton">Register</button>
+                        <button type="button" onclick="PlayGame()" id="startButton" disabled>Start</button>
+                        <button type="button" onclick="CheckAnswer()" id="checkAnswerButton" disabled>Check Answer</button>
+                        <button type="button" onclick="PlayGame()" id="nextButton" disabled>Next</button>
+                        <button type="button" onclick="End()" id="endButton" disabled>End</button>
+                        <button type="button" onclick="findPercentageScore()" id="percentageScoreButton" disabled>Percentage Score</button>
+    
+    
+    
+                    </div> <!--End of buttons div-->
+                    <br><br>
+
+                    <div class="textAreas" id="textAreas">
+                        <textarea id="showpercentage" rows="6" cols="60"></textarea>
+                        <textarea id="showallplayers" rows="6" cols="60"></textarea>
+                    </div> <!--End of textAreas div-->
+
+
+                </form>
+                <div class="chartscontainer" id="chartsContainer">
+                    <h2>Charts</h2>
+                    <div id="showcharts" >
+                        <!-- Charts will be displayed here -->
+                    </div>
+                </div>
+                
+                
+            </div>            
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
